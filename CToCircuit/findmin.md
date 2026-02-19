@@ -11,7 +11,9 @@ int main(int nums[]) {
     }
     return cur_min;
 }
-` `` *(Note: original code contains syntax errors, shown here for reference)*
+```
+
+*(Note: original code contains syntax errors, shown here for reference)*
 
 ---
 
@@ -25,12 +27,12 @@ int main(int nums[]) {
 
 ### Input Pins
 
-| Pin   | Description                                  |
-|-------|----------------------------------------------|
-| `Start` | Determines if the program should begin     |
-| `Stop`  | Determines whether the program should stop |
-| `Num`   | The current number being processed         |
-| `Clk`   | The clock signal                           |
+| Pin     | Description                                  |
+|---------|----------------------------------------------|
+| `Start` | Determines if the program should begin       |
+| `Stop`  | Determines whether the program should stop   |
+| `Num`   | The current number being processed           |
+| `Clk`   | The clock signal                             |
 
 ### Output Pins
 
@@ -61,9 +63,6 @@ The register updates under **one of two conditions** (connected via an OR gate):
 
 2. **Loop Update** — When inside the loop and `Num < Min`
    - Maps to the `if (nums[i] < cur_min)` check
-```
-
-
 
 
 
