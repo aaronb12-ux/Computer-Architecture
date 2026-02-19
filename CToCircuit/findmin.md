@@ -1,6 +1,7 @@
 # Converting C-Code to Hardware
 
 ## C Code
+
 ```c
 int main(int nums[]) {
     int cur_min = nums[0];
@@ -63,7 +64,3 @@ The register updates under **one of two conditions** (connected via an OR gate):
 
 2. **Loop Update** — When inside the loop and `Num < Min`
    - Maps to the `if (nums[i] < cur_min)` check
-
-
-
-
