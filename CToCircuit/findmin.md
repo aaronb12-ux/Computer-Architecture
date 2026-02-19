@@ -64,3 +64,27 @@ The register updates under **one of two conditions** (connected via an OR gate):
 
 2. **Loop Update** — When inside the loop and `Num < Min`
    - Maps to the `if (nums[i] < cur_min)` check
+
+## Finite State Machine Diagram
+
+![FSM Diagram](https://github.com/user-attachments/assets/effc9a05-4748-4656-8af3-3833ba42ffd5)
+
+---
+
+## FSM States & Transitions
+
+### State 1: `Ready`
+The function has been called and the circuit is ready to begin.
+
+| Condition  | Action                          |
+|------------|---------------------------------|
+| `Start = 0` | Stay in `Ready` state          |
+| `Start = 1` | Transition to `InLoop` state   |
+
+### State 2: `InLoop`
+The circuit is actively processing the array.
+
+| Condition  | Action                          |
+|------------|---------------------------------|
+| `Stop = 0` | Stay in `InLoop` state         |
+| `Stop = 1` | Transition back to `Ready` state |
