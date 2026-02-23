@@ -25,7 +25,7 @@ int main(int nums[]) {
 ---
 
 > [!IMPORTANT]
-> Important: In the above diagram, there should be a clock attached to the Q port in the register.
+> Important: In the above diagram, there should be a clock attached to the R port in the register.
 
 ## Datapath Definition
 
