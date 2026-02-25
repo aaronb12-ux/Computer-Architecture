@@ -159,6 +159,9 @@ LB0 = S1S0
 
 Using the derived next-state and output equations, we construct the final circuit implementation.
 
+<img width="967" height="484" alt="trafficlightcontroller" src="https://github.com/user-attachments/assets/836819d0-4927-4a53-8017-8b1a94ba36d2" />
+
+
 ---
 
 ## Questions
