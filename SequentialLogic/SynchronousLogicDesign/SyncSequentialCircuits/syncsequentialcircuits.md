@@ -15,9 +15,7 @@ Using registers in every feedback path leads to the formal definition of a **syn
 
 A **sequential circuit** has a finite set of discrete states:
 
-\[
-\{ S_0, S_1, S_2, \dots, S_{k-1} \}
-\]
+{S0, S1, S2, ..., S(k-1)}
 
 A **synchronous sequential circuit** has a clock input whose **rising edges** define the moments when **state transitions occur**.
 
