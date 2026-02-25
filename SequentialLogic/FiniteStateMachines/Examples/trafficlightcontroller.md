@@ -104,7 +104,70 @@ The complete transition table is shown in the figure above.
 
 ---
 
-### Summary
+## State Encoding
+
+Since we have 4 states, we need encodings of 2 bits because 2^n = 4 where n = 2 (number of bits).  
+The general equation is 2^n ≥ number of states, and we choose the smallest value of n that satisfies this condition.
+
+### Encoding Tables
+
+**States:**
+- S0: 00
+- S1: 01
+- S2: 10
+- S3: 11
+
+**Outputs:**
+- Green: 00
+- Yellow: 01
+- Red: 10
+
+Using these encodings, we rewrite the state transition table:
+
+![Encoded Transition Table](https://github.com/user-attachments/assets/96bb9edc-0e52-4fbf-b312-838ff174fd49)
+
+---
+
+## Next-State Logic
+
+From the encoded transition table, we derive the next-state equations using the sum-of-products method:
+
+S'1 = ~S1S0 + S1~S0TB + S1~S0~TB  
+→ ~S1S0 + S1~S0(TB + ~TB)  
+→ ~S1S0 + S1~S0  
+→ S1 XOR S)
+
+S'0 = ~S1~S0~TA + S1~S0~TB
+
+---
+
+## Output Logic
+
+![Output Table](https://github.com/user-attachments/assets/965d3824-2377-4b6c-9817-abe67d00e99b)
+
+From the output table, we derive the following equations:
+
+LA1 = S1~S0 + S1S0 → S1(~S0 + S0) → S1  
+LA0 = ~S1S0  
+
+LB1 = ~S1~S0 + ~S1S0 → ~S1  
+LB0 = S1S0
+
+---
+
+## Circuit Implementation
+
+Using the derived next-state and output equations, we construct the final circuit implementation.
+
+---
+
+## Questions
+
+Why do we put **S'0** and **S'1** into the input ports of the D flip-flops?
+
+---
+
+## Summary
 
 This FSM:
 - Responds to traffic demand using sensors
