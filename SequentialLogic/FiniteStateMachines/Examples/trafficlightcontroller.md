@@ -135,7 +135,7 @@ From the encoded transition table, we derive the next-state equations using the 
 S'1 = ~S1S0 + S1~S0TB + S1~S0~TB  
 → ~S1S0 + S1~S0(TB + ~TB)  
 → ~S1S0 + S1~S0  
-→ S1 XOR S)
+→ S1 XOR S0
 
 S'0 = ~S1~S0~TA + S1~S0~TB
 
@@ -161,12 +161,13 @@ Using the derived next-state and output equations, we construct the final circui
 
 <img width="967" height="484" alt="trafficlightcontroller" src="https://github.com/user-attachments/assets/836819d0-4927-4a53-8017-8b1a94ba36d2" />
 
-
 ---
 
 ## Questions
 
 Why do we put **S'0** and **S'1** into the input ports of the D flip-flops?
+
+Answer: the outputs of the flip flops are the current state we are in: S0 and S1. Now, these outputs are then passed through to the two and gates. Here, when there is a clock edge, we use this current state and our inputs TA and TB to calculate the next state which is then S'0 and S'1 and these are fed into the flip flop. Its a constant loop.
 
 ---
 
