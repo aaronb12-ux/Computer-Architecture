@@ -165,9 +165,19 @@ Using the derived next-state and output equations, we construct the final circui
 
 ## Questions
 
-Why do we put **S'0** and **S'1** into the input ports of the D flip-flops?
+> **Why do we put S'0 and S'1 into the input ports of the D flip-flops?**
 
-Answer: the outputs of the flip flops are the current state we are in: S0 and S1. Now, these outputs are then passed through to the two and gates. Here, when there is a clock edge, we use this current state and our inputs TA and TB to calculate the next state which is then S'0 and S'1 and these are fed into the flip flop. Its a constant loop.
+**Answer:**
+
+- The outputs of the flip-flops represent the **current state**: `S0` and `S1`
+- These outputs are fed into the AND gates, where combined with inputs `TA` and `TB`, they calculate the **next state**: `S'0` and `S'1`
+- On each rising clock edge, those next state values get sampled and become the new `Q` outputs — which are now the new current state
+- That new current state then feeds back into the logic to calculate the *next* next state, and so on
+
+It's essentially a constant feedback loop:
+```
+Current State (S0, S1) → combinational logic (AND gates + TA, TB) → Next State (S'0, S'1) → D inputs → [clock edge] → back to Current State
+```
 
 ---
 
